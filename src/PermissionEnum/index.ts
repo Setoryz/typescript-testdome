@@ -1,0 +1,22 @@
+const PermissionEnum = (): void => {
+    function getPermissionList(permission: Permission): string[] {
+        const arr: Array<string> = [];
+        for (const item in Permission) {
+            if ((permission & +Permission[item]) === +Permission[item]) {
+                arr.push(item);
+            }
+        }
+        return [...arr];
+    }
+
+    enum Permission {
+        Read = 1,
+        Write = 2,
+        Execute = 4,
+    }
+
+    console.log(getPermissionList(Permission.Read | Permission.Write));
+    console.log(Permission.Read | Permission.Write);
+};
+
+export default PermissionEnum;
