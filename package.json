@@ -1,0 +1,12 @@
+{
+  "name": "typescript-testdome",
+  "version": "1.0.0",
+  "description": "Answers to testdome typescript practice questions",
+  "main": "dist/index.ts",
+  "repository": "https://github.com/Setoryz/typescript-testdome",
+  "author": "Odukoya Jesuseyitan <setoryz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
