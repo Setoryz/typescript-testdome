@@ -1,21 +1,34 @@
 {
-  "name": "typescript-testdome",
-  "version": "1.0.0",
-  "description": "Answers to testdome typescript practice questions",
-  "main": "dist/index.ts",
-  "repository": "https://github.com/Setoryz/typescript-testdome",
-  "author": "Odukoya Jesuseyitan <setoryz@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
-    "eslint": "^7.26.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.0",
-    "typescript": "^4.2.4"
-  }
+    "name": "typescript-testdome",
+    "version": "1.0.0",
+    "description": "Answers to testdome typescript practice questions",
+    "main": "dist/index.ts",
+    "repository": "https://github.com/Setoryz/typescript-testdome",
+    "author": "Odukoya Jesuseyitan <setoryz@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.ts": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.24.0",
+        "@typescript-eslint/parser": "^4.24.0",
+        "eslint": "^7.26.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.0",
+        "typescript": "^4.2.4"
+    }
 }
