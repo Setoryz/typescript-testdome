@@ -2,12 +2,18 @@
     "name": "typescript-testdome",
     "version": "1.0.0",
     "description": "Answers to testdome typescript practice questions",
-    "main": "dist/index.ts",
+    "main": "lib/index.ts",
     "repository": "https://github.com/Setoryz/typescript-testdome",
     "author": "Odukoya Jesuseyitan <setoryz@gmail.com>",
     "license": "MIT",
+    "type": "module",
+    "module": "./lib/index.js",
     "scripts": {
-        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+        "tsc": "tsc -p tsconfig.json",
+        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "build": "rm -rf lib/* && yarn tsc",
+        "dev": "node lib/index.js",
+        "start": "yarn build && yarn dev"
     },
     "husky": {
         "hooks": {
