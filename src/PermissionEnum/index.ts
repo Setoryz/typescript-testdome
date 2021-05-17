@@ -1,6 +1,6 @@
 const PermissionEnum = (): void => {
     function getPermissionList(permission: Permission): string[] {
-        const arr: Array<string> = [];
+        const arr: string[] = [];
         for (const item in Permission) {
             if ((permission & +Permission[item]) === +Permission[item]) {
                 arr.push(item);
